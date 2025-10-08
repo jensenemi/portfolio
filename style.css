@@ -32,3 +32,14 @@ nav a:hover {
   padding-bottom: 0.3em;
   background-color: oklch(95% 5% 0);
 }
+input, textarea, button, select {
+  font: inherit;
+}
+form label, form input, form textarea, form select, form button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+form label {
+  margin-block: 1em 0.5em;
+}

@@ -30,4 +30,5 @@ html {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.3em;
+  background-color: oklch(95% 5% 0);
 }

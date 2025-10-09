@@ -92,12 +92,12 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-section {
+.resume section {
   margin-block: 4rem;
 }
 
 ul {
-  padding-left: 1.25em;  /* Adds spacing from the left */
+  padding-left: 1.25em; 
   margin-bottom: 1rem;
 }
 

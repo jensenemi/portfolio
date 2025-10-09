@@ -87,8 +87,8 @@ h1 {
   font-size: 400%;
 }
 
-.resume section {
-  outline: 1px solid red;
+section {
+  margin-block: 5rem;
 }
 
 ul {

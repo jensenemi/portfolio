@@ -92,8 +92,12 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+.resume {
+  padding-block: 10rem;
+}
+
 .resume section {
-  margin-block: 10rem;
+  margin-block: 5rem;
 }
 
 ul {

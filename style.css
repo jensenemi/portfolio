@@ -108,3 +108,10 @@ ul {
 li {
   margin-bottom: 0.3rem;
 } */
+
+section {
+  outline: 5px dashed limegreen !important;
+  background-color: rgba(0, 255, 0, 0.05) !important;
+  min-height: 5rem;
+  margin: 2rem 0;
+}

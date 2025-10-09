@@ -1,8 +1,4 @@
 body {
-  background: yellow;
-}
-
-body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
@@ -97,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-  outline: 5 px solid red;
+  outline: 5px solid red;
 }
 
 /* .resume section {

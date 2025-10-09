@@ -87,6 +87,13 @@ h1 {
   font-size: 400%;
 }
 
+section {
+  outline: 5px dashed limegreen !important;
+  background-color: rgba(0, 255, 0, 0.05) !important;
+  min-height: 5rem;
+  margin: 2rem 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
@@ -108,10 +115,3 @@ ul {
 li {
   margin-bottom: 0.3rem;
 } */
-
-section {
-  outline: 5px dashed limegreen !important;
-  background-color: rgba(0, 255, 0, 0.05) !important;
-  min-height: 5rem;
-  margin: 2rem 0;
-}

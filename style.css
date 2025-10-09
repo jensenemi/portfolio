@@ -92,8 +92,8 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-.resume {
-  padding-block: 10rem;
+.section {
+  outline: 5 px solid red;
 }
 
 /* .resume section {

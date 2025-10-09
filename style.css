@@ -7,11 +7,13 @@ body {
     margin-inline: auto;
     padding: 1rem;
   }
+
 nav {
     display: flex;
     margin-bottom: 1rem;
     border-bottom: 1px solid oklch(80% 3% 200);
   }
+
 nav a {
   flex: 1;
   text-decoration: none;
@@ -19,22 +21,27 @@ nav a {
   text-align: center;
   padding: 0.5em;
 }
+
 nav a.current {
   border-bottom: 0.4em solid oklch(80% 3% 200);
   padding-bottom: 0.3em;
 }
+
 html {
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
 }
+
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.3em;
   background-color: oklch(95% 5% 0);
 }
+
 input, textarea, button, select {
   font: inherit;
 }
+
 /* form label, form input, form textarea, form select, form button {
   display: block;
   width: 100%;
@@ -43,20 +50,35 @@ input, textarea, button, select {
 form label {
   margin-block: 1em 0.5em;
 } */
+
 form {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;
 }
+
 form label {
   display: grid;
   grid-template-columns: subgrid;
 }
+
 form label, form button {
   grid-column: 1 / -1;
 }
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 0.5em;
+}
+
+.projects article h2 {
+  margin: 0;
 }

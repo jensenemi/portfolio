@@ -41,7 +41,10 @@ for (let p of pages) {
     if (!url.startsWith('http')) {
         url = !url.startsWith('http') ? BASE_PATH + url : url;
       }
-    nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
+    let a = document.createElement('a');
+    a.href = url;
+    a.textContent = title;
+    nav.append(a);
   }
 
   

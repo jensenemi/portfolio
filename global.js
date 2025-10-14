@@ -83,7 +83,7 @@ form?.addEventListener('submit', function(event) {
     const data = new FormData(form);
     let params = [];
     for (let [name, value] of data) {
-        params.push('${name}=${encodeURIComponent(value)}');
+        params.push(`${name}=${encodeURIComponent(value)}`);
     }
     const url = form.action + '?' + params.join('&');
     console.log(name, value);

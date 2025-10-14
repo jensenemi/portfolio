@@ -86,6 +86,5 @@ form?.addEventListener('submit', function(event) {
         params.push(`${name}=${encodeURIComponent(value)}`);
     }
     const url = form.action + '?' + params.join('&');
-    console.log(name, value);
     location.href = url;
 });

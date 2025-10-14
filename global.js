@@ -17,6 +17,9 @@ function $$(selector, context = document) {
 //     currentLink.classList.add('current');
 // }
 
+const existingNavs = $$('nav');
+existingNavs.forEach(nav => nav.remove());
+
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },

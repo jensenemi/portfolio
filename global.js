@@ -38,11 +38,10 @@ for (let p of pages) {
     nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
   }
 
-// const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-// ? "/"                  // Local server
-// : "/website/";         // GitHub Pages repo name
+const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+? "/"                  // Local server
+: "/website/";         // GitHub Pages repo name
   
-
-// if (!url.startsWith('http')) {
-//     url = !url.startsWith('http') ? BASE_PATH + url : url;
-//   }
+if (!url.startsWith('http')) {
+    url = !url.startsWith('http') ? BASE_PATH + url : url;
+  }

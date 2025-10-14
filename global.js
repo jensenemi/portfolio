@@ -43,7 +43,7 @@ document.body.insertAdjacentHTML(
           </select>
       </label>`,
   );
-  
+
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
 ? "/"                  // Local server
 : "/portfolio/";         // GitHub Pages repo name
@@ -65,4 +65,8 @@ for (let p of pages) {
     nav.append(a);
   }
 
+const select = document.querySelector('.color-scheme select');
+select.addEventListener('input', function (event) {
+    console.log('color scheme changed to', event.target.value);
+  });
   

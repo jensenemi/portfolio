@@ -1,4 +1,5 @@
 console.log('IT’S ALIVE!');
+console.log('global.js loaded');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));

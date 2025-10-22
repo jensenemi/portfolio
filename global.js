@@ -94,7 +94,6 @@ export async function fetchJSON(url) {
     // Fetch the JSON file from the given URL
     const response = await fetch(url);
     console.log(response)
-    at <anonymous>:1:13
     if (!response.ok) {
       throw new Error(`Failed to fetch projects: ${response.statusText}`);
     }

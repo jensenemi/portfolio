@@ -1,5 +1,4 @@
 console.log('IT’S ALIVE!');
-console.log('global.js loaded');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -102,4 +101,3 @@ export async function fetchJSON(url) {
     console.error('Error fetching or parsing JSON data:', error);
   }
 }
-fetchJSON('/lib/projects.json');

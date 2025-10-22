@@ -103,4 +103,19 @@ export async function fetchJSON(url) {
     console.error('Error fetching or parsing JSON data:', error);
   }
 }
+
+// export function renderProjects(project, containerElement) {
+//   // Your code will go here
+//   containerElement.innerHTML = '';
+//   projects.forEach(project => {
+//     const article = document.createElement('article');
+//     article.innerHTML = `
+//     <h3>${project.title}</h3>
+//     <img src="${project.image}" alt="${project.title}">
+//     <p>${project.description}</p>
+//     containerElement.appendChild(article);
+// `;
+//   });
+// }
+
 fetchJSON('../lib/projects.json'); 

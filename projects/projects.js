@@ -38,4 +38,16 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
     });
 
     let query = '';
+    let searchInput = document.querySelector('.searchBar');
+    searchInput.addEventListener('change', (event) => {
+    // update query value
+    query = event.target.value;
+    // TODO: filter the projects
+    let filteredProjects = projects.filter((project) => {
+        let values = Object.values(project).join('\n').toLowerCase();
+        return values.includes(query.toLowerCase());
+    });
+    // TODO: render updated projects!
+    renderProjects(filteredProjects, projectsContainer, 'h2');
+    });
 })();

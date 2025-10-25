@@ -157,9 +157,18 @@ html {
   flex-wrap: wrap;       
 }
 
+.chart-container svg {
+  flex: 0 0 auto;
+  max-width: 300px;
+  height: auto;
+}
+
+.chart-container .legend {
+  flex: 1; 
+}
+
 .legend {
   display: grid;
-  flex: 1;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   gap: 1em; 
   margin: 1em 0;

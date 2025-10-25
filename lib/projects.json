@@ -1,9 +1,9 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "My Expository Visualization",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum culpa quod maiores, iusto molestias tenetur aliquam illo dicta possimus libero maxime qui numquam, ad nihil, et velit quae reprehenderit assumenda!"
+        "image": "images/project1viz.png",
+        "description": "Analyzed grocery store foods dataset and created single static visualization. "
     },
     {
         "title": "Cumque inventore sapiente obcaecati.",

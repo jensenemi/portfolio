@@ -150,20 +150,20 @@ html {
   overflow: visible;
 }
 
-.chart-container {
+.container {
   display: flex;         
   align-items: flex-start; 
   gap: 2em;               
   flex-wrap: wrap;       
 }
 
-.chart-container svg {
+.container svg {
   flex: 0 0 auto;
   max-width: 300px;
   height: auto;
 }
 
-.chart-container .legend {
+.container .legend {
   flex: 1; 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));

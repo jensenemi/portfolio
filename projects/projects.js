@@ -14,11 +14,10 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
         (v) => v.length,
         (d) => d.year,
     );
+    let data = rolledData.map(([year, count]) => {
+        return { value: count, label: year };
+    });
 })();
-
-let data = rolledData.map(([year, count]) => {
-    return { value: count, label: year };
-});
 
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 let sliceGenerator = d3.pie().value((d) => d.value);

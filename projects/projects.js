@@ -26,7 +26,7 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
     let colors = d3.scaleOrdinal(d3.schemeTableau10);
     arcs.forEach((arc, idx) => {
     d3.select('svg').append('path').attr('d', arc).attr('fill', colors(idx));
-});
+    });
 
     let legend = d3.select('.legend');
     data.forEach((d, idx) => {
@@ -35,5 +35,7 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
     .attr('class', 'legend-item') 
     .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
     .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
-        });
+    });
+
+    let query = '';
 })();

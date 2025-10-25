@@ -154,7 +154,8 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   gap: 1em; 
-  margin-top: 1em;
+  margin: 1em 0;
+  padding: 0.5em 1em;
 }
 
 .legend-item {

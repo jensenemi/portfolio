@@ -165,9 +165,6 @@ html {
 
 .chart-container .legend {
   flex: 1; 
-}
-
-.legend {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   gap: 1em; 

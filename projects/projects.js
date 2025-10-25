@@ -23,8 +23,8 @@ let sliceGenerator = d3.pie();
 let arcData = sliceGenerator(data);
 let arcs = arcData.map((d) => arcGenerator(d));
 
-let colors = ['gold', 'purple'];
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 arcs.forEach((arc, idx) => {
     // TODO, fill in step for appending path to svg using D3
-    d3.select('svg').append('path').attr('d', arc).attr('fill', colors[idx]);
+    d3.select('svg').append('path').attr('d', arc).attr('fill', colors(idx));
 });

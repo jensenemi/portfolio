@@ -185,7 +185,7 @@ html {
   width: 1em;
   height: 1em;
   aspect-ratio: 1 / 1;
-  background-color: var(--color, oklch(60% 45% 0)) !important;
+  background-color: var(--color);
   border-radius: 0.25em;
 }
 

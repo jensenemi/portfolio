@@ -180,7 +180,7 @@ html {
   gap: 0.5em; 
 }
 
-.legend-item.selected .swatch {
+.legend-item .swatch {
   display: inline-block;
   width: 1em;
   height: 1em;

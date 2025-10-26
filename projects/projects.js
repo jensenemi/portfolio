@@ -6,6 +6,7 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
     const projectsContainer = document.querySelector('.projects');
     const projectsTitle = document.querySelector('.projects-title');
     const searchInput = document.querySelector('.searchBar');
+
     renderProjects(projects, projectsContainer, 'h2');
     if (projectsTitle) {
         projectsTitle.textContent = `${projects.length} Projects`;
@@ -32,23 +33,25 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
         let colors = d3.scaleOrdinal(d3.schemeTableau10);
         arcs.forEach((arc, idx) => {
-            d3.select('svg').append('path').attr('d', arc).attr('fill', colors(idx));
+            newSVG.append('path').attr('d', arc).attr('fill', colors(idx));
         });
 
         newData.forEach((d, idx) => {
             legend
-            .append('li')
-            .attr('class', 'legend-item') 
-            .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
-            .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
+                .append('li')
+                .attr('class', 'legend-item') 
+                .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
+                .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
         });
     }
     renderPieChart(projects);
 
     searchInput.addEventListener('change', (event) => {
-        let query = event.target.value;
-        let filteredProjects = setQuery(event.target.value);
-        // re-render legends and pie chart when event triggers
+        let query = event.target.value.toLowerCase();
+        let filteredProjects = projects.filter(project =>
+            Object.values(project).join(' ').toLowerCase().includes(query)
+        );
+        
         renderProjects(filteredProjects, projectsContainer, 'h2');
         renderPieChart(filteredProjects)
     });

@@ -206,14 +206,6 @@ svg:has(path:hover) path:not(:hover) {
   fill: var(--color);
 }
 
-.swatch {
-  display: inline-block;  
-  width: 1em;              
-  height: 1em;            
-  margin-right: 0.5em;     
-  vertical-align: middle;  
-}
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;

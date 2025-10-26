@@ -41,18 +41,16 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
                 .on('click', () => {
                     selectedIndex = selectedIndex === idx ? -1 : idx;
                     newSVG
-                    .selectAll('path')
-                    .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''))
-                    .attr('fill', (_, idx) => (idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)));
-                legend
-                    .selectAll('li')
-                    .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : 'legend-item'))
-                    .attr('style', (_, idx) =>
-                            `--color:${
-                                idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)
-                            }`
-                        ); 
-            });
+                        .selectAll('path')
+                        .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''))
+                        .attr('fill', (_, idx) => (idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)));
+                    legend
+                        .selectAll('li')
+                        .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : 'legend-item'))
+                        .attr('style', (_, idx) =>
+                            `--color:${idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)}`
+                        );
+                });
         });
 
         newData.forEach((d, idx) => {

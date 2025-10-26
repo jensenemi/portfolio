@@ -47,9 +47,7 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
                     legend
                         .selectAll('li')
                         .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : 'legend-item'))
-                        .attr('style', (_, idx) =>
-                            `--color:${idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)}`
-                        );
+                        .style('color', (_, i) => (i === selectedIndex ? 'oklch(60% 45% 0)' : colors(i)));
                 });
         });
 

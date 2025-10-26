@@ -43,12 +43,17 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
                     newSVG
                         .selectAll('path')
                         .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
-                        // .attr('fill', (_, idx) => (idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)));
                     legend
                         .selectAll('li')
                         .attr('class', (_, idx) => (idx === selectedIndex ? 'legend-item selected' : 'legend-item'));
-                        // .select('.swatch')
-                        // .style('background-color', (_, idx) => (idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)));
+
+                    if (selectedIndex === -1) {
+                        renderProjects(projects, projectsContainer, 'h2');
+                    } else {
+                        const year = newData[selectedIndex].label;
+                        const filteredProjects = projects.filter(project => project.year == year);
+                        renderProjects(filteredProjects, projectsContainer, 'h2');
+                    }
                 });
         });
 

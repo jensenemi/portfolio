@@ -46,7 +46,7 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
     }
     renderPieChart(projects);
 
-    searchInput.addEventListener('change', (event) => {
+    searchInput.addEventListener('input', (event) => {
         let query = event.target.value.toLowerCase();
         let filteredProjects = projects.filter(project =>
             Object.values(project).join(' ').toLowerCase().includes(query)

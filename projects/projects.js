@@ -12,6 +12,7 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
         projectsTitle.textContent = `${projects.length} Projects`;
     }
 
+    let selectedIndex = -1;
     function renderPieChart(projectsGiven) {
         let newRolledData = d3.rollups(
             projectsGiven,
@@ -33,7 +34,20 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
         let colors = d3.scaleOrdinal(d3.schemeTableau10);
         arcs.forEach((arc, idx) => {
-            newSVG.append('path').attr('d', arc).attr('fill', colors(idx));
+            newSVG
+                .append('path')
+                .attr('d', arc)
+                .attr('fill', colors(idx))
+                .on('click', () => {
+                    selectedIndex = selectedIndex === idx ? -1 : idx;
+                    newSVG
+                    .selectAll('path')
+                    .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''))
+                    .attr('fill', (_, idx) => (idx === selectedIndex ? 'oklch(60% 45% 0)' : colors(idx)));
+                legend
+                    .selectAll('li')
+                    .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : 'legend-item'));
+            });
         });
 
         newData.forEach((d, idx) => {

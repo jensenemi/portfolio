@@ -229,6 +229,12 @@ svg:has(path:hover) path:not(:hover) {
   display: inline;
 }
 
+.gridlines line {
+  stroke: #ccc;       
+  stroke-opacity: 0.5; 
+  shape-rendering: crispEdges;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;

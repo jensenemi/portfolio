@@ -258,6 +258,7 @@ dl.info dd {
   padding: 0.75em 1em;
   background-color: rgba(255, 255, 255, 0.9); 
   border-radius: 0.5em;
+  backdrop-filter: blur(8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   font-size: 0.9rem;
 }

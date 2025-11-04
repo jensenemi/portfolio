@@ -213,7 +213,7 @@ svg:has(path:hover) path:not(:hover) {
   margin: 20px 0;
 }
 
-.stats dl .stat{
+.stats dl {
   display: flex;      
   gap: 20px;           
   padding: 0;

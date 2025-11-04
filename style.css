@@ -238,6 +238,9 @@ svg:has(path:hover) path:not(:hover) {
 dl.info {
   display: grid;
   grid-template-columns: max-content 1fr; 
+  gap: 0.25em 0.75em;
+  margin: 0;
+
 }
 
 dl.info dt {
@@ -252,6 +255,11 @@ dl.info dd {
   position: fixed;
   top: 1em;
   left: 1em;
+  padding: 0.75em 1em;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 0.5em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
 }
 
 circle {

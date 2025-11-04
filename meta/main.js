@@ -54,8 +54,14 @@ function renderCommitInfo(data, commits) {
   
     // Add more stats as needed...
     const avgLineLength = d3.mean(data, d => d.length);
+    dl.append('dt').text('Average line length');
+    dl.append('dd').text(avgLineLength.toFixed(2));
     const avgFileDepth = d3.mean(data, d => d.depth);
+    dl.append('dt').text('Average file depth');
+    dl.append('dd').text(avgFileDepth.toFixed(2));
     const maxDepth = d3.max(data, d => d.depth);
+    dl.append('dt').text('Maximum depth');
+    dl.append('dd').text(maxDepth);
   }
 
 let data = await loadData();

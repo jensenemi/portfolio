@@ -215,17 +215,18 @@ svg:has(path:hover) path:not(:hover) {
 
 .stats dl {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   row-gap: 8px;
-  column-gap: 10px;
+  column-gap: 20px;
 }
 
 .stats dt {
+  display: inline;
   font-weight: bold;
 }
 
 .stats dd {
-  font-weight: bold;
+  display: inline;
 }
 
 

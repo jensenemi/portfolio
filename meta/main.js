@@ -87,8 +87,13 @@ function renderScatterPlot(data, commits) {
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
         .attr('r', 5)
-        .attr('fill', 'steelblue');
-
+        .attr('fill', 'steelblue')
+        .on('mouseenter', (event, commit) => {
+          renderTooltipContent(commit);
+        })
+        .on('mouseleave', () => {
+          renderTooltipContent({});
+        });
     const margin = { top: 10, right: 10, bottom: 30, left: 20 };
     const usableArea = {
         top: margin.top,
@@ -128,6 +133,21 @@ function renderScatterPlot(data, commits) {
     // Create gridlines as an axis with no labels and full-width ticks
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 }
+
+function renderTooltipContent(commit) {
+    const link = document.getElementById('commit-link');
+    const date = document.getElementById('commit-date');
+  
+    if (Object.keys(commit).length === 0) return;
+  
+    link.href = commit.url;
+    link.textContent = commit.id;
+    date.textContent = commit.datetime?.toLocaleString('en', {dateStyle: 'full'});
+    time.textContent = commit.datetime?.toLocaleTimeString('en', { timeStyle: 'short' });
+    author.textContent = commit.author;
+    lines.textContent = commit.totalLines;
+}
+  
   
 
 let data = await loadData();

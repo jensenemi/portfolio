@@ -235,6 +235,34 @@ svg:has(path:hover) path:not(:hover) {
   shape-rendering: crispEdges;
 }
 
+dl.info {
+  display: grid;
+  grid-template-columns: max-content 1fr; 
+}
+
+dl.info dt {
+  font-weight: bold;
+}
+
+dl.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;

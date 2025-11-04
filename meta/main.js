@@ -143,6 +143,11 @@ function renderScatterPlot(data, commits) {
         .attr('transform', `translate(${usableArea.left}, 0)`);
     // Create gridlines as an axis with no labels and full-width ticks
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
+    createBrushSelector(svg);
+}
+
+function createBrushSelector(svg) {
+    svg.call(d3.brush());
 }
 
 function renderTooltipContent(commit) {

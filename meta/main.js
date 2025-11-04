@@ -89,10 +89,11 @@ function renderScatterPlot(data, commits) {
         .attr('r', 5)
         .attr('fill', 'steelblue')
         .on('mouseenter', (event, commit) => {
-          renderTooltipContent(commit);
+            renderTooltipContent(commit);
+            updateTooltipVisibility(true);
         })
         .on('mouseleave', () => {
-          renderTooltipContent({});
+            updateTooltipVisibility(false);
         });
     const margin = { top: 10, right: 10, bottom: 30, left: 20 };
     const usableArea = {
@@ -149,7 +150,10 @@ function renderTooltipContent(commit) {
     lines.textContent = commit.totalLines;
 }
   
-  
+function updateTooltipVisibility(isVisible) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.hidden = !isVisible;
+}  
 
 let data = await loadData();
 let commits = processCommits(data);

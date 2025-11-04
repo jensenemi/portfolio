@@ -57,7 +57,6 @@ function renderCommitInfo(data, commits) {
     const avgFileDepth = d3.mean(data, d => d.depth);
     const maxDepth = d3.max(data, d => d.depth);
   }
-  
 
 let data = await loadData();
 let commits = processCommits(data);

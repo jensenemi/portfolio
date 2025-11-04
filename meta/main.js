@@ -12,3 +12,4 @@ async function loadData() {
   console.log(data);
   return data;
 }
+let data = await loadData();

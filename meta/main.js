@@ -148,6 +148,7 @@ function renderScatterPlot(data, commits) {
 
 function createBrushSelector(svg) {
     svg.call(d3.brush());
+    svg.selectAll('.dots, .overlay ~ *').raise();
 }
 
 function renderTooltipContent(commit) {

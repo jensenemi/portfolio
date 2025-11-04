@@ -116,8 +116,8 @@ html {
 
 #profile-stats dl {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  gap: 1rem; /* optional space between columns */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; 
 }
 
 #profile-stats dt {

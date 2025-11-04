@@ -298,6 +298,10 @@ dl.info[hidden]:not(:hover, :focus-within) {
   animation: marching-ants 2s linear infinite;
 }
 
+circle.selected {
+  fill: #ff6b6b;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;

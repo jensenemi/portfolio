@@ -8,7 +8,7 @@
     {
         "title": "Bikewatching Visualization",
         "year": "2025",
-        "image": "images/bikewatching.png",
+        "image": "../images/bikewatching.png",
         "description": "An interactive visualization of bike traffic in Boston throughout the day."
     },
     {

@@ -84,13 +84,11 @@ form label, form button {
   margin: 0;
 }
 
-.projects article image {
-  max-width: 100%; 
-  height: auto;  
-  width: 300px;      
+.projects article img {
+  width: 100%;     
+  height: 200px; 
   object-fit: cover;
-  display: block;   
-  margin-bottom: 1rem;
+  display: block;
 }
 
 h1 {

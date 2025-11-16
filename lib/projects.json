@@ -2,7 +2,7 @@
     {
         "title": "My Expository Visualization",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "../images/project1viz.png",
         "description": "Analyzed grocery store food dataset and created single static visualization. "
     },
     {

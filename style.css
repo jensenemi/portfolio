@@ -84,6 +84,15 @@ form label, form button {
   margin: 0;
 }
 
+.projects article img {
+  max-width: 100%; 
+  height: auto;  
+  width: 300px;      
+  object-fit: cover;
+  display: block;   
+  margin-bottom: 1rem;
+}
+
 h1 {
   font-size: 400%;
 }

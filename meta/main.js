@@ -251,5 +251,31 @@ function updateTooltipPosition(event) {
 let data = await loadData();
 let commits = processCommits(data);
 
+let commitProgress = 100;
+let timeScale = d3
+.scaleTime()
+.domain([
+  d3.min(commits, (d) => d.datetime),
+  d3.max(commits, (d) => d.datetime),
+])
+.range([0, 100]);
+
+let commitMaxTime = timeScale.invert(commitProgress);
+
+function onTimeSliderChange() {
+  const slider = document.getElementById('commit-progress');
+  commitProgress = +slider.value; 
+  commitMaxTime = timeScale.invert(commitProgress); 
+  const timeEl = document.getElementById('commit-slider-time');
+  timeEl.textContent = commitMaxTime.toLocaleString('en', { 
+      dateStyle: 'long', 
+      timeStyle: 'short' 
+  });
+}
+
+const slider = document.getElementById('commit-progress');
+slider.addEventListener('input', onTimeSliderChange);
+onTimeSliderChange();
+
 renderCommitInfo(data, commits);
 renderScatterPlot(data, commits);

@@ -84,7 +84,7 @@ form label, form button {
   margin: 0;
 }
 
-.projects article img {
+.projects article image {
   max-width: 100%; 
   height: auto;  
   width: 300px;      

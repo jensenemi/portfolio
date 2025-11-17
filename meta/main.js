@@ -344,7 +344,7 @@ function updateFileDisplay(filteredCommits) {
     .map(([name, lines]) => {
       return { name, lines };
   });
-
+  
   let filesContainer = d3
   .select('#files')
   .selectAll('div')
@@ -353,31 +353,19 @@ function updateFileDisplay(filteredCommits) {
     // This code only runs when the div is initially rendered
     (enter) =>
       enter.append('div').call((div) => {
-        div.append('dt').append('small');
-        div.select('dt').append('div').attr('class', 'line-count')
+        div.append('dt').append('code');
         div.append('dd');
       }),
   );
 
   // This code updates the div info
-  // filesContainer.select('dt > code').text((d) => d.name);
+  filesContainer.select('dt > code').text((d) => d.name);
   // filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
   // append one div for each line
-  // filesContainer
-  //   .select('dd')
-  //   .selectAll('div')
-  //   .data((d) => d.lines)
-  //   .join('div')
-  //   .attr('class', 'loc');
-  filesContainer.select('dt').html(d => `
-    <code>${d.name}</code>
-    <small>${d.lines.length} lines</small>
-  `);
-
-  // Append one div per line in <dd>
-  filesContainer.select('dd')
+  filesContainer
+    .select('dd')
     .selectAll('div')
-    .data(d => d.lines)
+    .data((d) => d.lines)
     .join('div')
     .attr('class', 'loc');
 }

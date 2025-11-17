@@ -266,7 +266,7 @@ function onTimeSliderChange() {
   const slider = document.getElementById('commit-progress');
   commitProgress = +slider.value; 
   commitMaxTime = timeScale.invert(commitProgress); 
-  const timeEl = document.getElementById('commit-slider-time');
+  const timeEl = document.getElementById('commit-time');
   timeEl.textContent = commitMaxTime.toLocaleString('en', { 
       dateStyle: 'long', 
       timeStyle: 'short' 

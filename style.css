@@ -316,6 +316,25 @@ dl.info[hidden]:not(:hover, :focus-within) {
     grid-column: 2;
 }
 
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: steelblue;
+  border-radius: 50%;
+}
+
+dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
 .selection {
   fill-opacity: 0.1;
   stroke: black;

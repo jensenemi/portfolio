@@ -361,7 +361,7 @@ function updateFileDisplay(filteredCommits) {
 
   // This code updaxtes the div info
   filesContainer.select('dt > code').text((d) => d.name);
-  filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
+  // filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
   // append one div for each line
   filesContainer
     .select('dd')

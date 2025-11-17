@@ -335,6 +335,7 @@ let timeScale = d3
 
 let commitMaxTime = timeScale.invert(commitProgress);
 let filteredCommits = commits;
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 function updateFileDisplay(filteredCommits) {
   // after initializing filteredCommits
@@ -370,7 +371,8 @@ function updateFileDisplay(filteredCommits) {
     .selectAll('div')
     .data((d) => d.lines)
     .join('div')
-    .attr('class', 'loc');
+    .attr('class', 'loc')
+    .attr('style', (d) => `--color: ${colors(d.type)}`)
 }
 
 function onTimeSliderChange() {

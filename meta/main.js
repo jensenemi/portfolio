@@ -201,12 +201,14 @@ function renderScatterPlot(data, commits) {
     svg
         .append('g')
         .attr('transform', `translate(0, ${usableArea.bottom})`)
+        .attr('class', 'x-axis')
         .call(xAxis);
 
     // Add Y axis
     svg
         .append('g')
         .attr('transform', `translate(${usableArea.left}, 0)`)
+        .attr('class', 'y-axis')
         .call(yAxis);
     // Add gridlines BEFORE the axes
     const gridlines = svg
@@ -271,9 +273,6 @@ function updateScatterPlot(data, commits) {
 
   const xAxis = d3.axisBottom(xScale);
   const xAxisGroup = svg.select('g.x-axis');
-  if (xAxisGroup.empty()) {
-    xAxisGroup = svg.append('g').attr('class', 'x-axis').attr('transform', `translate(0, ${usableArea.bottom})`)
-  }
   xAxisGroup.selectAll('*').remove();
   xAxisGroup.call(xAxis);
 
@@ -334,6 +333,3 @@ function onTimeSliderChange() {
 const slider = document.getElementById('commit-progress');
 slider.addEventListener('input', onTimeSliderChange);
 onTimeSliderChange();
-
-// renderCommitInfo(data, filteredCommits);
-// renderScatterPlot(data, filteredCommits);

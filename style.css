@@ -331,7 +331,8 @@ circle.selected {
 .slider-row {
   display: flex;
   align-items: center;  
-  gap: 1rem;            
+  gap: 1rem; 
+  white-space: nowrap;           
 }
 
 #commit-progress {
@@ -342,8 +343,7 @@ circle.selected {
 
 .commit-date {
   margin-top: 0.5rem;
-  font-weight: bold;
-  text-align: center;
+  text-align: right;
 }
 
 h1, h2, h3, h4, h5, h6 {

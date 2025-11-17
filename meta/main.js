@@ -354,6 +354,7 @@ function updateFileDisplay(filteredCommits) {
     (enter) =>
       enter.append('div').call((div) => {
         div.append('dt').append('small');
+        div.select('dt').append('div').attr('class', 'line-count')
         div.append('dd');
       }),
   );
@@ -369,8 +370,8 @@ function updateFileDisplay(filteredCommits) {
   //   .join('div')
   //   .attr('class', 'loc');
   filesContainer.select('dt').html(d => `
-  <code>${d.name}</code>
-  <small>${d.lines.length} lines</small>
+    <code>${d.name}</code>
+    <small>${d.lines.length} lines</small>
   `);
 
   // Append one div per line in <dd>

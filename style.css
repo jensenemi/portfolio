@@ -324,6 +324,12 @@ dl.info[hidden]:not(:hover, :focus-within) {
   border-radius: 50%;
 }
 
+.line-count {
+  font-size: 0.8em;      /* smaller text */
+  color: #666;           /* lighter gray */
+  margin-top: 0.2em;     /* optional spacing from dots */
+}
+
 dd {
   grid-column: 2;
   display: flex;

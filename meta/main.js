@@ -273,11 +273,13 @@ function onTimeSliderChange() {
       timeStyle: 'short' 
   });
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  renderScatterPlot(data, filteredCommits);
+  renderCommitInfo(data, filteredCommits);
 }
 
 const slider = document.getElementById('commit-progress');
 slider.addEventListener('input', onTimeSliderChange);
 onTimeSliderChange();
 
-renderCommitInfo(data, filteredCommits);
-renderScatterPlot(data, filteredCommits);
+// renderCommitInfo(data, filteredCommits);
+// renderScatterPlot(data, filteredCommits);

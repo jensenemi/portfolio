@@ -242,7 +242,7 @@ svg:has(path:hover) path:not(:hover) {
   shape-rendering: crispEdges;
 }
 
-dl.info {
+dl.stats {
   display: grid;
   /* grid-template-columns: max-content 1fr; 
   gap: 0.25em 0.75em;
@@ -253,11 +253,11 @@ dl.info {
   margin: 0;
 }
 
-dl.info dt {
+dl.stats dt {
   font-weight: bold;
 }
 
-dl.info dd {
+dl.stats dd {
   margin: 0;
 }
 

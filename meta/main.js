@@ -354,29 +354,12 @@ function updateFileDisplay(filteredCommits) {
       enter.append('div').call((div) => {
         div.append('dt').append('code');
         div.append('dd');
-        div.append('div').attr('class', 'line-count');
       }),
   );
 
-// This code updates the div info
+  // This code updates the div info
   filesContainer.select('dt > code').text((d) => d.name);
-// filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
-// filesContainer
-//   .select('dd')
-//   .selectAll('div')
-//   .data((d) => d.lines)
-//   .join('div')
-//   .attr('class', 'loc');
-
-  filesContainer
-    .select('dd')
-    .selectAll('div.loc')
-    .data((d) => d.lines)
-    .join('div')
-    .attr('class', 'loc');
-
-  // Line count BELOW file name
-    filesContainer.select('div.line-count').text((d) => `${d.lines.length} lines`);
+  filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
 }
 
 function onTimeSliderChange() {
@@ -393,7 +376,6 @@ function onTimeSliderChange() {
   updateScatterPlot(data, filteredCommits);
   updateFileDisplay(filteredCommits);
 }
-
 
 const slider = document.getElementById('commit-progress');
 slider.addEventListener('input', onTimeSliderChange);

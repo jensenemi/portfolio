@@ -9,7 +9,8 @@
         "title": "Bikewatching Visualization",
         "year": "2025",
         "image": "../images/bikewatching.png",
-        "description": "An interactive visualization of bike traffic in Boston throughout the day."
+        "description": "An interactive visualization of bike traffic in Boston throughout the day.",
+        "url": "https://jensenemi.github.io/bikewatching/"
     },
     {
         "title": "Impedit commodi eos corrupti.",

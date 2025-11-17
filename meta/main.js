@@ -353,15 +353,16 @@ function updateFileDisplay(filteredCommits) {
     // This code only runs when the div is initially rendered
     (enter) =>
       enter.append('div').call((div) => {
-        div.append('dt').append('code');
-        div.append('small');
+        let dt = div.append('dt');
+        dt.append('code');
+        dt.append('small');
         div.append('dd');
       }),
   );
 
   // This code updaxtes the div info
   filesContainer.select('dt > code').text((d) => d.name);
-  filesContainer.select('dt small').text((d) => `${d.lines.length} lines`);
+  filesContainer.select('dt > small').text((d) => `${d.lines.length} lines`);
   // append one div for each line
   filesContainer
     .select('dd')

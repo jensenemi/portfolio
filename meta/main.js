@@ -359,13 +359,29 @@ function updateFileDisplay(filteredCommits) {
 
 // This code updates the div info
 filesContainer.select('dt > code').text((d) => d.name);
-filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
-filesContainer
-  .select('dd')
-  .selectAll('div')
-  .data((d) => d.lines)
-  .join('div')
-  .attr('class', 'loc');
+// filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
+// filesContainer
+//   .select('dd')
+//   .selectAll('div')
+//   .data((d) => d.lines)
+//   .join('div')
+//   .attr('class', 'loc');
+
+const dots = filesContainer
+    .select('dd')
+    .selectAll('div.loc')
+    .data((d) => d.lines)
+    .join('div')
+    .attr('class', 'loc');
+
+  // Append line count BELOW the dots
+  filesContainer
+    .select('dd')
+    .selectAll('div.line-count')
+    .data((d) => [d]) // just one element per file for the count
+    .join('div')
+    .attr('class', 'line-count')
+    .text((d) => `${d.lines.length} lines`);
 }
 
 function onTimeSliderChange() {

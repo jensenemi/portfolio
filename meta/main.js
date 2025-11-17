@@ -44,7 +44,7 @@ function processCommits(data) {
 
 function renderCommitInfo(data, commits) {
     // Create the dl element
-    const dl = d3.select('#stats').select('dl.stats');
+    let dl = d3.select('#stats').select('dl.stats');
     if (dl.empty()) {
       dl = d3.select('#stats').append('dl').attr('class', 'stats');
     } else {
@@ -167,7 +167,7 @@ function renderScatterPlot(data, commits) {
     const dots = svg.append('g').attr('class', 'dots');
     dots
         .selectAll('circle')
-        .data(sortedCommits)
+        .data(sortedCommits, (d) => d.id)
         .join('circle')
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
@@ -288,7 +288,7 @@ function updateScatterPlot(data, commits) {
   const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
   dots
     .selectAll('circle')
-    .data(sortedCommits)
+    .data(sortedCommits, (d) => d.id)
     .join('circle')
     .attr('cx', (d) => xScale(d.datetime))
     .attr('cy', (d) => yScale(d.hourFrac))

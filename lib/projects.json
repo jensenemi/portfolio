@@ -2,13 +2,13 @@
     {
         "title": "My Expository Visualization",
         "year": "2025",
-        "image": "../images/project1viz.png",
+        "image": "/portfolio/images/project1viz.png",
         "description": "Analyzed grocery store food dataset and created single static visualization. "
     },
     {
         "title": "Bikewatching Visualization",
         "year": "2025",
-        "image": "../images/bikewatching.png",
+        "image": "/portfolio/images/bikewatching.png",
         "description": "An interactive visualization of bike traffic in Boston throughout the day.",
         "url": "https://jensenemi.github.io/bikewatching/"
     },

@@ -289,10 +289,20 @@ function updateScatterPlot(data, commits) {
   dots
     .selectAll('circle')
     .data(sortedCommits, (d) => d.id)
-    .join('circle')
+    //.join('circle')
+    .join(
+      enter => enter.append('circle')
+                    .attr('cx', d => xScale(d.datetime))
+                    .attr('cy', d => yScale(d.hourFrac))
+                    .attr('r', 0)              // start from 0
+                    .attr('fill', 'steelblue')
+                    .style('fill-opacity', 0.7)
+                    .call(enter => enter.transition().duration(200)
+                                          .attr('r', d => rScale(d.totalLines)))
+    )
     .attr('cx', (d) => xScale(d.datetime))
     .attr('cy', (d) => yScale(d.hourFrac))
-    .attr('r', (d) => rScale(d.totalLines))
+    //.attr('r', (d) => rScale(d.totalLines))
     .attr('fill', 'steelblue')
     .style('fill-opacity', 0.7) // Add transparency for overlapping dots
     .on('mouseenter', (event, commit) => {

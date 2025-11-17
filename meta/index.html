@@ -17,12 +17,12 @@
         <a href="https://github.com/jensenemi" target="_blank">Github</a>
     </nav>
     <h1>Meta</h1>
-    <div class="commit-slider-container" style="display:flex; align-items:baseline; gap:1em; margin-bottom:1em;">
-      <label for="commit-progress" style="flex:1;">
+    <div class="commit-slider-container">
+      <label for="commit-progress">
         Show commits until:
       </label>
-      <input type="range" id="commit-progress" min="0" max="100" value="100" />
-      <time id="commit-time" style="margin-left:auto;"></time>
+      <input type="range" id="commit-progress" min="0" max="100" value="100">
+      <div id="commit-time" class="commit-data"></div>
     </div>
     <div id="stats"></div>
     <h2>Commits by time of day</h2>

@@ -320,6 +320,26 @@ circle.selected {
   font-weight: bold;
 }
 
+.commit-slider-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: stretch;   
+  width: 80%;            
+  margin: 1rem auto;      
+}
+
+#commit-progress {
+  width: 100%;       
+  height: 1.2rem;    
+  margin-top: 0.5rem;
+}
+
+.commit-date {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;

@@ -52,8 +52,9 @@ function renderCommitInfo(data, commits) {
     }
   
     // Add total LOC
+    const totalLines = commits.flatMap(d => d.lines).length;
     dl.append('dt').html('Total <abbr title="Lines of code">LOC</abbr>');
-    dl.append('dd').text(data.length);
+    dl.append('dd').text(totalLines);
   
     // Add total commits
     dl.append('dt').text('Total commits');

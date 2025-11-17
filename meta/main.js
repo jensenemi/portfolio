@@ -135,6 +135,7 @@ function isCommitSelected(selection, commit) {
     return x >= x0 && x <= x1 && y >= y0 && y <= y1;
 }
 
+
 function renderScatterPlot(data, commits) {
     // Put all the JS code of Steps inside this function
     const width = 1000;
@@ -152,6 +153,7 @@ function renderScatterPlot(data, commits) {
         .range([0, width])
         .nice();
     yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
+
     const [minLines, maxLines] = d3.extent(sortedCommits, (d) => d.totalLines);
     const rScale = d3
         .scaleSqrt() // Change only this line
@@ -303,6 +305,8 @@ function updateScatterPlot(data, commits) {
 
 let data = await loadData();
 let commits = processCommits(data);
+renderScatterPlot(data, commits);
+
 
 let commitProgress = 100;
 let timeScale = d3
@@ -326,8 +330,8 @@ function onTimeSliderChange() {
       timeStyle: 'short' 
   });
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
-  updateScatterPlot(data, filteredCommits);
   renderCommitInfo(data, filteredCommits);
+  updateScatterPlot(data, filteredCommits);
 }
 
 const slider = document.getElementById('commit-progress');

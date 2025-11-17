@@ -354,6 +354,7 @@ function updateFileDisplay(filteredCommits) {
     (enter) =>
       enter.append('div').call((div) => {
         div.append('dt').append('code');
+        div.append('small');
         div.append('dd');
       }),
   );

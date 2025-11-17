@@ -324,12 +324,6 @@ dl.info[hidden]:not(:hover, :focus-within) {
   border-radius: 50%;
 }
 
-.line-count {
-  font-size: 0.8em;      /* smaller text */
-  color: #666;           /* lighter gray */
-  margin-top: 0.2em;     /* optional spacing from dots */
-}
-
 dd {
   grid-column: 2;
   display: flex;
@@ -340,6 +334,13 @@ dd {
   padding-top: 0.6em;
   margin-left: 0;
 }
+
+dt small {
+  display: block;
+  opacity: 0.6;   /* make it lighter */
+  font-size: 0.8em; /* make it smaller */
+}
+
 
 .selection {
   fill-opacity: 0.1;

@@ -18,11 +18,13 @@
     </nav>
     <h1>Meta</h1>
     <div class="commit-slider-container">
-      <label for="commit-progress">
-        Show commits until:
-      </label>
-      <input type="range" id="commit-progress" min="0" max="100" value="100">
-      <div id="commit-time" class="commit-data"></div>
+      <div class="slider-row">
+        <label for="commit-progress">
+          Show commits until:
+        </label>
+        <input type="range" id="commit-progress" min="0" max="100" value="100">
+      </div>
+      <div id="commit-time" class="commit-date"></div>
     </div>
     <div id="stats"></div>
     <h2>Commits by time of day</h2>

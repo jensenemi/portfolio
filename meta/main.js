@@ -360,28 +360,36 @@ function updateFileDisplay(filteredCommits) {
 // This code updates the div info
 filesContainer.select('dt > code').text((d) => d.name);
 // filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
-filesContainer.select('dd').each(function(d) {
-  const dd = d3.select(this);
-  dd.html(''); // clear old content
-
-  // 1. Add text for number of lines
-  dd.append('span')
-    .attr('class', 'line-count')
-    .text(`${d.lines.length} lines`);
-
-  // 2. Add div for each line (unit visualization)
-  dd.selectAll('div.loc')
-    .data(d.lines)
-    .join('div')
-    .attr('class', 'loc');
-});
-// append one div for each line
 // filesContainer
 //   .select('dd')
 //   .selectAll('div')
 //   .data((d) => d.lines)
 //   .join('div')
 //   .attr('class', 'loc');
+filesContainer.select('dd').each(function(d) {
+  const dd = d3.select(this);
+  dd.html(''); // clear old content
+
+  // Row with file name and dots
+  const topRow = dd.append('div')
+    .attr('class', 'file-row');
+
+  topRow.append('span')
+    .attr('class', 'file-name')
+    .text(d.name);
+
+  topRow.append('span')
+    .attr('class', 'dots-row')
+    .selectAll('div')
+    .data(d.lines)
+    .join('div')
+    .attr('class', 'loc');
+
+  // Line count below
+  dd.append('div')
+    .attr('class', 'line-count')
+    .text(`${d.lines.length} lines`);
+});
 }
 
 function onTimeSliderChange() {

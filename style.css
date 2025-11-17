@@ -291,21 +291,6 @@ dl.info[hidden]:not(:hover, :focus-within) {
   visibility: hidden;
 }
 
-dl.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem; /* space between columns */
-}
-
-dl.stats dt {
-  font-weight: bold;
-}
-
-dl.stats dd {
-  margin: 0 0 0.5rem 0; /* optional spacing below each value */
-}
-
-
 @keyframes marching-ants {
   to {
     stroke-dashoffset: -8; /* 5 + 3 */
@@ -317,10 +302,17 @@ dl.stats dd {
   grid-template-columns: 1fr 4fr;
 }
 
-#files > div {
+/* #files > div {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
+} */
+
+#files > div {
+  display: grid;
+  grid-template-rows: auto auto; /* first row = filename, second row = dots */
+  align-items: start;
+  margin-bottom: 0.5em; /* space between files */
 }
 
 #files dt {

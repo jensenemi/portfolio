@@ -140,6 +140,7 @@ function renderScatterPlot(data, commits) {
     const width = 1000;
     const height = 600;
     const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+
     const svg = d3
         .select('#chart')
         .append('svg')
@@ -270,14 +271,11 @@ function updateScatterPlot(data, commits) {
 
   const xAxis = d3.axisBottom(xScale);
   const xAxisGroup = svg.select('g.x-axis');
+  if (xAxisGroup.empty()) {
+    xAxisGroup = svg.append('g').attr('class', 'x-axis').attr('transform', `translate(0, ${usableArea.bottom})`)
+  }
   xAxisGroup.selectAll('*').remove();
   xAxisGroup.call(xAxis);
-
-  // CHANGE: we should clear out the existing xAxis and then create a new one.
-  svg
-    .append('g')
-    .attr('transform', `translate(0, ${usableArea.bottom})`)
-    .call(xAxis);
 
   const dots = svg.select('g.dots');
 

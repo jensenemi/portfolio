@@ -279,5 +279,5 @@ const slider = document.getElementById('commit-progress');
 slider.addEventListener('input', onTimeSliderChange);
 onTimeSliderChange();
 
-renderCommitInfo(data, commits);
+renderCommitInfo(data, filteredCommits);
 renderScatterPlot(data, filteredCommits);

@@ -291,6 +291,21 @@ dl.info[hidden]:not(:hover, :focus-within) {
   visibility: hidden;
 }
 
+dl.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem; /* space between columns */
+}
+
+dl.stats dt {
+  font-weight: bold;
+}
+
+dl.stats dd {
+  margin: 0 0 0.5rem 0; /* optional spacing below each value */
+}
+
+
 @keyframes marching-ants {
   to {
     stroke-dashoffset: -8; /* 5 + 3 */

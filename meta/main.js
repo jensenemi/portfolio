@@ -1,4 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 let xScale;
 let yScale;
 
@@ -417,4 +418,16 @@ d3.select('#scatter-story')
     } files.
 		Then I looked over all I had made, and I saw that it was very good.
 	`,
-  );
+);
+
+function onStepEnter(response) {
+  console.log(response.element.__data__.datetime);
+}
+
+const scroller = scrollama();
+scroller
+  .setup({
+    container: '#scrolly-1',
+    step: '#scrolly-1 .step',
+  })
+  .onStepEnter(onStepEnter);

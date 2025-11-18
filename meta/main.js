@@ -16,7 +16,7 @@ async function loadData() {
 }
 
 function processCommits(data) {
-    return d3
+    const commits = d3
       .groups(data, (d) => d.commit)
       .map(([commit, lines]) => {
         let first = lines[0];

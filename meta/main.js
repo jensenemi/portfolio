@@ -41,8 +41,8 @@ function processCommits(data) {
         });
         return ret;
       });
-      commits.sort((a, b) => a.datetime - b.datetime);
-      return commits;
+    commits.sort((a, b) => a.datetime - b.datetime);
+    return commits;
 }
 
 function renderCommitInfo(data, commits) {

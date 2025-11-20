@@ -127,7 +127,7 @@ html {
   gap: 1rem; 
 }
 
-/* #profile-stats dt {
+#profile-stats dt {
   grid-row: 1; 
   text-align: center;
 }
@@ -136,7 +136,7 @@ html {
   grid-row: 2; 
   text-align: center; 
   margin: 0;
-} */
+}
 
 .project-info {
   display: flex;

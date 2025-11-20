@@ -121,7 +121,7 @@ html {
   font-weight: normal;
 }
 
-#profile-stats dl {
+/* #profile-stats dl {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem; 
@@ -136,6 +136,22 @@ html {
   grid-row: 2; 
   text-align: center; 
   margin: 0;
+} */
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+
+#profile-stats dt {
+  font-weight: bold;
+  margin: 0;
+}
+
+#profile-stats dd {
+  margin: 0;
+  font-size: 1.2em;
 }
 
 .project-info {
